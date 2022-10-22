@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <ctype.h>
+
+
+int main()
+{
+
+    char rechennya[128];
+    int prygolosna, golosna;
+
+    prygolosna = golosna = 0;
+
+    printf("\nInput your rechennya: ");
+    fgets(rechennya, sizeof(rechennya), stdin);
+
+    // для кожного символа в реченні
+    for (int i = 0; rechennya[i] != '\0'; ++i) {
+
+        // перетворення в нижній реєстр
+        rechennya[i] = tolower(rechennya[i]);
+
+        if (rechennya[i] == 'a' || rechennya[i] == 'e' || rechennya[i] == 'i' ||
+            rechennya[i] == 'o' || rechennya[i] == 'u') {
+
+        ++golosna;
+        }
+        else if ((rechennya[i] >= 'a' && rechennya[i] <= 'z')) {
+        ++prygolosna;
+        }
+
+    }
+
+    printf("\nAmount of golosna letters: %d\n", golosna);
+    printf("Amount of prygolosna letters: %d", prygolosna);
+    printf("\n ");
+
+    return 0;
+}
