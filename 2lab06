@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+
+    int n = 100;
+    int exc = 33;
+    int i, num, sum = 0;
+
+    printf("Enter your number on journal: ");
+    scanf("%d", &num);
+    i = 1;
+
+    while (i <= n) {
+        sum += i;
+        ++i;
+
+        if (i == num)
+        sum = sum - num - exc;
+    }
+
+    printf("Sum = %d", sum);
+    return 0;
+} 
