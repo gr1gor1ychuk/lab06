@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    int length, sum;
+    float average;
+
+    printf("Input Amount Of Numbers: \n");
+    scanf("%d", &length);
+
+    if (length > 12 || length < 7) {
+    printf("Your input number should be from 7 to 12");
+    return 0;
+    }
+
+    int length1 = length;
+
+    int largest, smaller;
+    int array[length];
+
+    for (int i = 0; i < length; i++)
+        {
+            printf("Array[%d] = ", i+1);
+            scanf("%d", &array[i]);
+        }
+    
+
+    for(int i = 0; i < length1; i++)
+          sum += array[i];
+
+    printf("Sum = %d\n", sum);
+
+    average = (float)sum / length1;
+          
+    printf("Average = %.2f\n", average);  
+
+    largest = array[0];
+ 
+    for (int i = 0; i < length; i++) 
+    {
+        if (largest < array[i])
+        largest = array[i];
+    }
+    
+    printf("Largest element = %d\n", largest);
+
+    smaller = array[0];
+ 
+    for (int i = 0; i < length; i++) 
+    {
+        if (smaller > array[i])
+        smaller = array[i];
+    }
+    
+    printf("Smallest element = %d\n", smaller);
+
+    return 0;
+}
